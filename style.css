@@ -1,0 +1,108 @@
+html body{
+				margin: auto;
+				top: 0;
+				bottom: 0;
+			 	background-color: #F5EDED;
+				}
+				#div-header{
+					margin-top: -1em;
+					height: 100px;
+					width: 100%;
+					background-color: #423B30;
+				}
+				#div-center-header{
+					margin: auto;
+				  right: 0;
+				 	left: 0;
+				  height: 95;
+				  width: 1000px;
+				}
+				#my-header{
+					height: 120px;
+					width: 100%;
+				}
+				#header-h1{
+					margin-top: 40px;
+					float: left;
+					font-size: 150%;
+				}
+				#header-ul{
+					text-decoration: none;
+				}
+				#header-ul li{
+					font-size: 150%;
+					text-decoration: none;
+					display: inline;
+					float: right;
+					vertical-align:baseline;
+					padding-left: 35px;
+					margin-top: 40px;
+				}
+				.header-anchor{
+					text-decoration: none;
+					color: #FDFCFC;
+				}
+				.div-breather{
+					height: 50px;
+					width: 100%;
+					/*background-color: orange;*/
+				}
+				#wrapper{
+					margin: auto;
+				  right: 0;
+				 	left: 0;
+				  min-height: 1100px;
+				  max-width: 3000px;
+				  min-width: 100;
+				  /*background-color: blue;*/
+				}
+				.main-content{
+				  margin: auto;
+				  /*right: 0;
+				 	left: 0;*/
+				  max-width: 800px;
+				  min-height:100px;
+				  background-color: #FFFDFD;
+				  /*border-bottom: 1px solid ;*/
+				}
+				.article{
+					font-style: normal;
+			    font-family: "Arial Verdena", "sans-serif";
+          font-size: 1em;
+          color: #BE2D0F;
+					}
+				#comments_area{
+				  margin: auto;
+				  right: 0;
+				 	left: 0;
+				  max-width: 800px;
+				  min-height:100px;
+				  background-color: #FBEFc3;
+				  /*border-bottom: 1px solid;*/
+				}
+				.single_comment{
+					/*background-color: #FAFAFA;*/
+				}
+				.user{
+					font-style: normal;
+			    font-family: "Arial Verdena", "sans-serif";
+          font-size: 1.1em;
+          color: #0101DF;
+				}
+				.comment{
+					font-style: normal;
+			    font-family: "Algerian", "sans-serif";
+          font-size: 0.9em;
+				}
+				#div-footer{
+					height: 200px;
+					width: 100%;
+					background-color: #524E4E;
+				}
+				#div-center-footer{
+					margin: auto;
+				  right: 0;
+				 	left: 0;
+				 	width: 1000px;
+				 	/*height: 50px;*/
+				}

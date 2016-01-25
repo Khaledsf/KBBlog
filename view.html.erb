@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	
+	<head>
+		<meta charset="utf-8">
+		<title>Khaled Bouchama</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		
+	</head>
+	
+	<body>
+		<!-- bellow is the heading area -->
+		<div id="div-header">
+			<div id="div-center-header">
+				<header id="my-header">
+					<h1 id="header-h1"><a class="header-anchor" href="index.html">KHALED BOUCHAMA</a></h1>
+					<ul id="header-ul">
+						<li><a class="header-anchor" href="blog.html">Portfolio</a></li>
+						<li><a class="header-anchor" href="resume.html">Resume</a></li>
+						<li><a class="header-anchor" href="about.html">About</a><i>
+					</ul>
+				</header>
+			</div>
+		</div>
+		
+		<!-- bellow is main div content area note the first div is for space -->
+		<div class="div-breather"></div>
+		<div id="wrapper">
+			<div class="main-content">
+				<p class="article">Add some magic to the way you work via ssh by using a config file to allow you to make shortcuts.
+If you are like me and have at least one server you connect to on a regular basis, you probably use ssh as the way to administer your remote servers from the command line.
+There is more to ssh then the "ssh user@host port xxxx" we are all used to. You can do a lot more and it's quite simple:
+shorten ssh commands to only two elements
+use different identity files / ssh keys for specific servers
+use custom / alternative ports
+keep ssh open for a longer time
+use ssh proxy</p>
+				<p class="article">
+SSH obtains it's configuration data from several places, using the first value encountered for a specific parameter. When you use the ssh command, if you use flags, the values that you pass are going to be use and for the flags that you haven't specified any value, ssh will use the values specified in the config file, if one exists. The last stop is the config file at the root level, where all default values are expressed.
+Command line parameters
+These are the parameters / flags you specify in the command line.
+User specific config file
+A file ~/.ssh/config placed in the .ssh directory of the current user.
+System wide config file
+A file /etc/ssh/ssh_config containing system wide config options. These are were all default values are stored.
+To use a config file for SSH, you only have to create a file named config (with no extension) and place it inside the .ssh folder. This will allow you to create shortcuts for different servers or server configurations.
+Each shortcut is defined as a block of code, that contains one config option per line and starts with a
+Host
+declaration.</p>
+
+				<p class="article">
+Host shortcut name
+HostName hostname
+config option 2
+config option 3
+For example, if you invoke the command
+ssh rasp
+ssh will look inside the config file for a host declaration with the name of "rasp" and if it finds one, it will use all the config options specified after the host declaration until it reached the next host declaration or the end of the file.
+You can also use wildcards like ( * ) that apply for all hosts. It is a common practice to have your more general configurations at the bottom of the file and the more specific ones at the top.
+Here is an example of a config block for one of my servers.
+Host rasp
+HostName 192.168.1.xxx
+User xxxxxxx
+Port 22
+
+Host *
+ServerAliveInterval 30
+ServerAliveCountMax 120</p>
+
+				<p class="article">
+The last two config options are useful to keep the session open when you have to be away from from the computer for some time. ServerAliveInternal receives an integer that represents the number of seconds ssh will wait before refreshing your connection while ServerAliveCountMax's value tells ssh how many times should it refresh your connection. If you multiply the two numbers you get the number of seconds your session will be kept open while you are away, in my case 3600 seconds or 1 hour. Because I used a wildcard, these two config options apply for all hosts I connect to via ssh.
+If you want to overwrite these options for a specific host, you only have to specify the option name and it's new value for that specific host block.
+To find out more about the config options I used and all the other available config options, you can visit the SSH config man page.</p>
+		</div>
+			
+			<div id="comments_area">
+				<!-- Ruby code begins here. -->
+				<% if @userName.empty? == false %>
+				<%= "Hi" + " " + @userName %>
+				<a href="/Ruby/logout.rb">Logout</a>
+				<div id="comments_box">
+					<p id="username"></p>
+					<form action="comment.rb" method="POST">
+					<input type="text" name="username" value=<%= @userName %>><br>
+					<textarea id='comment' rows='4' cols='50' name='comment' placeholder='Enter comment here...'></textarea>
+					<br />
+					<input type='submit' value='submit'>
+					</form>
+				</div>
+				<% else %>
+				<%= "Not logged in" %>
+				<h3>Comments</h3>
+				<h4><a href="login.html">LOGIN to leave a comment</a></h4>
+				<hr>
+				<% end %>
+				<div id="all_comments">
+					<% query_data.each do |array| %>
+						<div class="single_comment">
+							<p class="user"><%= array[0] %></p>
+							<p class="comment"><%= array[1] %></p>
+						</div>
+					<%end%>
+				</div>
+			</div>
+		
+		</div>
+		
+		<!-- bellow is the footer area -->
+		<div id="div-footer">
+			<div id="div-center-footer">
+				<footer id="my-footer"></footer>
+			</div>
+		</div>
+	
+	</body>
+
+</html>
